@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_29_233708) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_30_194041) do
   create_table "animals", force: :cascade do |t|
     t.string "name"
     t.string "binomial"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sightings", force: :cascade do |t|
+    t.integer "latitude"
+    t.integer "longitude"
+    t.string "date"
+    t.integer "animal_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
